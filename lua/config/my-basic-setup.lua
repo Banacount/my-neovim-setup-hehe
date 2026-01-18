@@ -10,6 +10,7 @@ vim.keymap.set("v", "<leader>y", function() copyToClipboard() end, { desc = "Cop
 
 -- General stuffs
 vim.keymap.set("n", "<leader>f", ':Oil<CR>', { desc = "Open oil.nvim using leader" })
+vim.keymap.set("n", "<leader>j", vim.lsp.buf.hover, { desc = "Trigger lsp for hovering definition" })
 
 -- Debugging stuffs
 -- Diagnose command for syntax errors
