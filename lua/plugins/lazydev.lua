@@ -2,6 +2,7 @@ return {
     {
         "folke/lazydev.nvim",
         ft = "lua", -- only load on lua files
+        priority = 2000,
         opts = {
           library = {
             -- See the configuration section for more details
@@ -14,7 +15,7 @@ return {
     -- optional blink completion source for require statements and module annotations
     {
         "saghen/blink.cmp",
-        tag = 'v1.8.0',
+        version = 'v1.8.0',
         opts = {
             sources = {
                 -- add lazydev to your completion providers

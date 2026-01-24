@@ -1,11 +1,14 @@
 -- Force the damn mapleader
 vim.g.mapleader = [[ ]]
 vim.g.maplocalleader = [[ ]]
-require("config.my-basic-setup")
 
 require("config.lazy")
-require("config.html-stuff")
 require("lazy").setup("plugins")
+
+require("config.html-stuff")
+require("config.my-basic-setup")
+require("config.lsp-config")
+require("config.theme-config")
 
 -- Tab setting
 vim.cmd("set expandtab")
@@ -14,10 +17,19 @@ vim.cmd("set softtabstop=4")
 vim.cmd("set shiftwidth=4")
 
 -- Colorscheme
-vim.cmd("colorscheme lunaperche")
+vim.cmd("colorscheme catppuccin")
 
 -- General settings
 vim.opt.number = true
 vim.opt.relativenumber = true
 
 -- Plugin setups
+local hbac = require("hbac")
+hbac.setup({
+    autoclose     = true, -- set autoclose to false if you want to close manually
+    threshold     = 10, -- hbac will start closing unedited buffers once that number is reached
+    close_command = function(bufnr)
+    vim.api.nvim_buf_delete(bufnr, {})
+    end,
+    close_buffers_with_windows = false, -- hbac will close buffers with associated windows if this option is `true`
+})

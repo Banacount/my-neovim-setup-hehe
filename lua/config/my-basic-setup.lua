@@ -11,6 +11,7 @@ vim.keymap.set("v", "<leader>y", function() copyToClipboard() end, { desc = "Cop
 -- General stuffs
 vim.keymap.set("n", "<leader>f", ':Oil<CR>', { desc = "Open oil.nvim using leader" })
 vim.keymap.set("n", "<leader>j", vim.lsp.buf.hover, { desc = "Trigger lsp for hovering definition" })
+vim.keymap.set("n", "<leader>b", ':Telescope buffers<CR>', { desc = "Go to buffer list ong" })
 
 -- Debugging stuffs
 -- Diagnose command for syntax errors
