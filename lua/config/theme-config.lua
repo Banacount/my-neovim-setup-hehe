@@ -5,7 +5,10 @@ local lualine = require("lualine")
 -- Catppuccin setup
 catpu.setup({
     flavour = "frappe",
-    show_end_of_buffer = true
+    show_end_of_buffer = true,
+    -- Transparent type shi 
+    transparent_background = true,
+    float = { transparent = true }
 })
 
 -- setup must be called before loading
@@ -50,7 +53,7 @@ lualine.setup({
     sections = {
         lualine_a = {'mode'},
         lualine_b = {'branch', 'diff', 'diagnostics'},
-        lualine_c = {'filename'},
+        lualine_c = {{'filename', path = 1}},
         lualine_x = {'encoding', 'fileformat', 'filetype'},
         lualine_y = {'progress'},
         lualine_z = {'location'}
