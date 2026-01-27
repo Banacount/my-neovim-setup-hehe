@@ -6,7 +6,7 @@ local lualine = require("lualine")
 catpu.setup({
     flavour = "frappe",
     show_end_of_buffer = true,
-    -- Transparent type shi 
+    -- Transparent type shi
     transparent_background = true,
     float = { transparent = true }
 })
@@ -59,7 +59,7 @@ lualine.setup({
         lualine_z = {'location'}
     },
     tabline = {
-        lualine_a = {{'tabs', mode = 2}}
+        lualine_a = {{'tabs', max_length = vim.o.columns, mode = 2, path = 0}}
     },
     inactive_sections = {
         lualine_a = {},
