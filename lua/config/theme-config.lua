@@ -2,6 +2,21 @@
 local catpu = require("catppuccin")
 local lualine = require("lualine")
 
+
+-- Functions
+-- Time for displaying my missery
+local function getTime()
+    --local time = os.date("*t")
+    local time = { hour = 13, min = 0 }
+    local hour = (time.hour > 12) and (time.hour - 12) or time.hour
+    local minute = (time.min < 10) and ("0"..time.min) or time.min
+    local mm = (time.hour >= 12) and "PM" or "AM"
+
+    if (hour == 0) then hour = 12 end
+    return hour .. ":" .. minute .. " " ..mm
+end
+
+
 -- Catppuccin setup
 catpu.setup({
     flavour = "frappe",
@@ -20,9 +35,9 @@ vim.cmd.colorscheme "catppuccin"
 lualine.setup({
     options = {
         icons_enabled = true,
-        theme = 'OceanicNext',
+        theme = 'everforest',
         component_separators = { left = '', right = ''},
-        section_separators = { left = '', right = ''},
+        section_separators = { left = '', right = ''},
         disabled_filetypes = {
             statusline = {},
             winbar = {},
@@ -50,12 +65,13 @@ lualine.setup({
         'CursorMovedI',
         'ModeChanged',
     },
+    -- 'encoding', 'progress'
     sections = {
         lualine_a = {'mode'},
         lualine_b = {'branch', 'diff', 'diagnostics'},
         lualine_c = {{'filename', path = 1}},
-        lualine_x = {'encoding', 'fileformat', 'filetype'},
-        lualine_y = {'progress'},
+        lualine_x = { getTime },
+        lualine_y = {'fileformat', 'filetype'},
         lualine_z = {'location'}
     },
     tabline = {
