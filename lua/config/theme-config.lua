@@ -6,8 +6,7 @@ local lualine = require("lualine")
 -- Functions
 -- Time for displaying my missery
 local function getTime()
-    --local time = os.date("*t")
-    local time = { hour = 13, min = 0 }
+    local time = os.date("*t")
     local hour = (time.hour > 12) and (time.hour - 12) or time.hour
     local minute = (time.min < 10) and ("0"..time.min) or time.min
     local mm = (time.hour >= 12) and "PM" or "AM"
