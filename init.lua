@@ -36,6 +36,7 @@ hbac.setup({
 
 -- Neovide setup
 if vim.g.neovide then
+    vim.g.neovide_fullscreen = true
     vim.cmd("set guicursor=n-v-c:block-Cursor,i-ci-ve:ver25-Cursor")
     vim.cmd([[highlight Cursor guibg=#faf200 guifg=black]])
     vim.cmd([[highlight lCursor guibg=#faf200 guifg=black]])
