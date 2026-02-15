@@ -33,3 +33,10 @@ hbac.setup({
     end,
     close_buffers_with_windows = false, -- hbac will close buffers with associated windows if this option is `true`
 })
+
+-- Neovide setup
+if vim.g.neovide then
+    vim.cmd("set guicursor=n-v-c:block-Cursor,i-ci-ve:ver25-Cursor")
+    vim.cmd([[highlight Cursor guibg=#faf200 guifg=black]])
+    vim.cmd([[highlight lCursor guibg=#faf200 guifg=black]])
+end
