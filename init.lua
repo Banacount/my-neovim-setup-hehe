@@ -40,4 +40,12 @@ if vim.g.neovide then
     vim.cmd("set guicursor=n-v-c:block-Cursor,i-ci-ve:ver25-Cursor")
     vim.cmd([[highlight Cursor guibg=#faf200 guifg=black]])
     vim.cmd([[highlight lCursor guibg=#faf200 guifg=black]])
+    vim.keymap.set({ "n", "v" }, "<C-+>", ":lua vim.g.neovide_scale_factor = vim.g.neovide_scale_factor + 0.1<CR>")
+    vim.keymap.set({ "n", "v" }, "<C-->", ":lua vim.g.neovide_scale_factor = vim.g.neovide_scale_factor - 0.1<CR>")
+    vim.keymap.set({ "n" , "v" }, "<C-0>", ":lua vim.g.neovide_scale_factor = 1<CR>")
+
+    -- Neovim backgrounds
+    vim.cmd([[highlight Normal guibg=#11111b]])
+    vim.cmd([[highlight StatusLine guibg=#0a0a12]])
+    vim.cmd([[highlight TabLineFill guibg=#131324]])
 end
