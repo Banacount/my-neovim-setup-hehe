@@ -1,6 +1,6 @@
 
 local catpu = require("catppuccin")
-local lualine = require("lualine")
+--local lualine = require("lualine")
 
 
 -- Functions
@@ -31,6 +31,7 @@ catpu.setup({
 
 --  
 -- Lualine setup
+--[[
 lualine.setup({
     options = {
         icons_enabled = true,
@@ -89,3 +90,4 @@ lualine.setup({
     inactive_winbar = {},
     extensions = {}
 })
+]]
