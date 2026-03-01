@@ -1,6 +1,6 @@
 
 local catpu = require("catppuccin")
---local lualine = require("lualine")
+local lualine = require("lualine")
 
 
 -- Functions
@@ -31,14 +31,13 @@ catpu.setup({
 
 --  
 -- Lualine setup
---[[
 lualine.setup({
     options = {
         icons_enabled = true,
-        theme = 'ayu_mirage',
+        theme = 'powerline_dark',
         --component_separators = { left = '', right = ''},
         --section_separators = { left = '', right = ''},
-        component_separators = '--',
+        component_separators = '',
         section_separators = { left = '', right = '' },
         disabled_filetypes = {
             statusline = {},
@@ -77,12 +76,19 @@ lualine.setup({
         lualine_z = {'location'}
     },
     tabline = {
-        lualine_a = {{'tabs', max_length = vim.o.columns, mode = 2, path = 0}}
+        lualine_a = {{
+            'tabs', max_length = vim.o.columns, mode = 2, path = 0,
+            use_mode_colors = false,
+            tabs_color = {
+                active = {fg = '#1f2411', bg = '#9bcf00', gui = 'bold'},
+                inactive = {fg = '#3d3d3d', bg = '#969696'}
+            }
+        }}
     },
     inactive_sections = {
         lualine_a = {},
         lualine_b = {},
-        lualine_c = {'filename'},
+        lualine_c = {{'filename', color = {fg = '#999999'}}},
         lualine_x = {'location'},
         lualine_y = {},
         lualine_z = {}
@@ -90,4 +96,3 @@ lualine.setup({
     inactive_winbar = {},
     extensions = {}
 })
-]]
