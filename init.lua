@@ -17,7 +17,7 @@ vim.cmd("set softtabstop=4")
 vim.cmd("set shiftwidth=4")
 
 -- Colorscheme
-vim.cmd("colorscheme lunaperche")
+vim.cmd("colorscheme catppuccin")
 
 -- General settings
 vim.opt.number = true
@@ -38,7 +38,7 @@ hbac.setup({
 -- Neovide setup
 if vim.g.neovide then
     vim.g.neovide_fullscreen = true
-    vim.g.neovide_cursor_animation_length = 0.04
+    vim.g.neovide_cursor_animation_length = 0
     vim.g.neovide_cursor_smooth_blink = true
     vim.cmd([[highlight Cursor guibg=#faf200 guifg=black]])
     vim.cmd([[highlight lCursor guibg=#faf200 guifg=black]])
@@ -47,7 +47,7 @@ if vim.g.neovide then
     vim.keymap.set({ "n", "v" }, "<C-->", ":lua vim.g.neovide_scale_factor = vim.g.neovide_scale_factor - 0.1<CR>")
     vim.keymap.set({ "n" , "v" }, "<C-0>", ":lua vim.g.neovide_scale_factor = 1<CR>")
     -- Neovim backgrounds
-    vim.cmd([[highlight Normal guibg=#121212]])
+    vim.cmd([[highlight Normal guibg=#000000]])
     vim.cmd([[highlight StatusLine guibg=#0a0a12]])
     vim.cmd([[highlight TabLineFill guibg=#131324]])
 end
