@@ -40,6 +40,7 @@ if vim.g.neovide then
     vim.g.neovide_fullscreen = true
     vim.g.neovide_cursor_animation_length = 0
     vim.g.neovide_cursor_smooth_blink = true
+    -- vim.g.neovide_opacity = 0.96
     vim.cmd([[highlight Cursor guibg=#faf200 guifg=black]])
     vim.cmd([[highlight lCursor guibg=#faf200 guifg=black]])
     vim.cmd("set guicursor=n-v-c:block-Cursor,i-ci-ve:ver25-Cursor")
