@@ -17,11 +17,7 @@ vim.cmd("set softtabstop=4")
 vim.cmd("set shiftwidth=4")
 
 -- Colorscheme
-<<<<<<< HEAD
-vim.cmd("colorscheme catppuccin")
-=======
 vim.cmd("colorscheme catppuccin-nvim")
->>>>>>> 71202a8 (yea nun changed lol)
 
 -- General settings
 vim.opt.number = true
