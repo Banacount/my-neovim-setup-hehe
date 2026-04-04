@@ -1,7 +1,7 @@
 
 local catpu = require("catppuccin")
 local lualine = require("lualine")
-
+local bufferline = require("bufferline")
 
 -- Functions
 -- Time for displaying my missery
@@ -75,7 +75,7 @@ lualine.setup({
         lualine_y = {'fileformat', 'filetype'},
         lualine_z = {'location'}
     },
-    tabline = {
+    --[[tabline = {
         lualine_a = {{
             'tabs', max_length = vim.o.columns, mode = 2, path = 0,
             use_mode_colors = false,
@@ -85,6 +85,7 @@ lualine.setup({
             }
         }}
     },
+    --]]
     inactive_sections = {
         lualine_a = {},
         lualine_b = {},
@@ -96,3 +97,41 @@ lualine.setup({
     inactive_winbar = {},
     extensions = {}
 })
+
+vim.opt.termguicolors = true
+
+local uni_fg = '#1f2411'
+local uni_bg = '#9bcf00'
+bufferline.setup{
+    options = {
+        numbers = "ordinal",
+        indicator = { icon = '=> ' }
+    },
+    highlights = {
+        buffer_selected = {
+            fg = uni_fg,
+            bg = uni_bg,
+            bold = true
+        },
+        numbers_selected = {
+            fg = uni_fg,
+            bg = uni_bg,
+            bold = true,
+        },
+        tab_separator = {
+            fg = uni_fg,
+            bg = uni_bg,
+        },
+        close_button_selected = {
+            fg = uni_fg,
+            bg = uni_bg,
+        },
+        indicator_selected = {
+            fg = uni_fg,
+            bg = uni_bg,
+        },
+        fill = {
+            bg = '#121212'
+        },
+    }
+}
