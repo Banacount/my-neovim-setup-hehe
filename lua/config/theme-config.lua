@@ -100,8 +100,8 @@ lualine.setup({
 
 vim.opt.termguicolors = true
 
-local uni_fg = '#1f2411'
-local uni_bg = '#9bcf00'
+local uni_fg = '#9bcf00'
+local uni_bg = '#383838'
 bufferline.setup{
     options = {
         numbers = "ordinal",
@@ -130,8 +130,12 @@ bufferline.setup{
             fg = uni_fg,
             bg = uni_bg,
         },
+        modified_selected = {
+            fg = uni_fg,
+            bg = uni_bg,
+        },
         fill = {
-            bg = '#121212'
+            bg = '#121212',
         },
     }
 }
