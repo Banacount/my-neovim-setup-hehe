@@ -104,6 +104,7 @@ local uni_fg = '#9bcf00'
 local uni_bg = '#383838'
 bufferline.setup{
     options = {
+        mode = "tabs",
         numbers = "ordinal",
         indicator = { icon = '=> ' }
     },
