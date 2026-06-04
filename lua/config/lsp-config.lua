@@ -17,3 +17,6 @@ lua_cfg.settings = {
 -- Enable it
 vim.lsp.config('lua_ls', lua_cfg)
 vim.lsp.enable('lua_ls')
+
+-- Java things
+vim.lsp.enable("jdtls")
