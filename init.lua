@@ -17,7 +17,7 @@ vim.opt.shiftwidth = 4
 vim.opt.expandtab = false
 
 -- Colorscheme
-vim.cmd("colorscheme catppuccin-nvim")
+vim.cmd("colorscheme catppuccin")
 
 -- General settings
 vim.opt.number = true

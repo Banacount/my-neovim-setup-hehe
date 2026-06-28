@@ -18,11 +18,11 @@ end
 
 -- Catppuccin setup
 catpu.setup({
-    flavour = "frappe",
+    flavour = "mocha",
     show_end_of_buffer = true,
     -- Transparent type shi
-    transparent_background = true,
-    float = { transparent = true }
+    --transparent_background = true,
+    --float = { transparent = false }
 })
 
 -- setup must be called before loading
@@ -34,11 +34,11 @@ catpu.setup({
 lualine.setup({
     options = {
         icons_enabled = true,
-        theme = 'powerline_dark',
-        --component_separators = { left = '', right = ''},
-        --section_separators = { left = '', right = ''},
-        component_separators = '',
-        section_separators = { left = '', right = '' },
+        theme = 'tomorrow_night',
+        --component_separators = '',
+        --section_separators = { left = '', right = '' },
+        component_separators = { left = '', right = ''},
+        section_separators = { left = '', right = ''},
         disabled_filetypes = {
             statusline = {},
             winbar = {},
@@ -71,7 +71,7 @@ lualine.setup({
         lualine_a = {'mode'},
         lualine_b = {'branch', 'diff', 'diagnostics'},
         lualine_c = {{'filename', path = 1}},
-        lualine_x = { getTime },
+        --lualine_x = { getTime },
         lualine_y = {'fileformat', 'filetype'},
         lualine_z = {'location'}
     },
@@ -100,13 +100,13 @@ lualine.setup({
 
 vim.opt.termguicolors = true
 
-local uni_fg = '#9bcf00'
-local uni_bg = '#383838'
-bufferline.setup{
+local uni_fg = '#ffffff'
+local uni_bg = '#282c40'
+bufferline.setup({
     options = {
         mode = "tabs",
         numbers = "ordinal",
-        indicator = { icon = '=> ' }
+        indicator = { icon = '> ' }
     },
     highlights = {
         buffer_selected = {
@@ -136,7 +136,7 @@ bufferline.setup{
             bg = uni_bg,
         },
         fill = {
-            bg = '#121212',
+            bg = '#181825',
         },
     }
-}
+})
