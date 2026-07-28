@@ -256,6 +256,7 @@ local sections = {
             { " Find File", "Telescope find_files", "<leader>ff" },
             { "󰍉 Find Word", "Telescope live_grep", "<leader>lg" },
             { " File Browser", "Telescope file_browser", "<leader>fb" },
+            { " Open 'work.vim'", "source work.vim", "<leader>gg" },
             -- { " Recent Files", "Telescope oldfiles", "<leader>of" },
             --{ " Colorschemes", "Telescope colorscheme", "<leader>cs" },
             --{ " New File", "lua require'startup'.new_file()", "<leader>nf" },
