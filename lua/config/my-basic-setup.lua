@@ -9,7 +9,7 @@ end
 vim.keymap.set("v", "<leader>y", function() copyToClipboard() end, { desc = "Copy selection to system clipboard" })
 
 -- General stuffs
-vim.keymap.set("n", "<leader>f", ':Oil<CR>', { desc = "Open oil.nvim using leader" })
+vim.keymap.set("n", "<leader>f", ':Ex<CR>', { desc = "Open netrw using leader" })
 vim.keymap.set("n", "<leader>j", vim.lsp.buf.hover, { desc = "Trigger lsp for hovering definition" })
 vim.keymap.set("n", "<leader>b", ':Telescope buffers<CR>', { desc = "Go to buffer list ong" })
 vim.keymap.set("n", "<M-j>", ':cnext<CR>', { desc = "Go next in quickfix list" })
