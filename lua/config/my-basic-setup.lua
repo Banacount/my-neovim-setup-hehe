@@ -1,5 +1,21 @@
 
 -- Functions
+local function listAllMarkedFiles()
+    local marked_files = vim.api.nvim_eval('netrw#Expose("netrwmarkfilelist")')
+    local allMarksString = ""
+
+    print(marked_files);
+    if type(marked_files) == "table" and not vim.tbl_isempty(marked_files) then
+        for i, file in ipairs(marked_files) do
+            allMarksString = allMarksString .. file .. "\n"
+        end
+
+        print(allMarksString)
+    else
+        print("No files are marked!")
+    end
+end
+
 local function copyToClipboard()
     vim.cmd('normal! "+y')
     print("Yanked to the system clipboard.")
@@ -10,6 +26,7 @@ vim.keymap.set("v", "<leader>y", function() copyToClipboard() end, { desc = "Cop
 
 -- General stuffs
 vim.keymap.set("n", "<leader>f", ':Ex<CR>', { desc = "Open netrw using leader" })
+vim.keymap.set("n", "<leader>ml", listAllMarkedFiles, { desc = "List all marked files" })
 vim.keymap.set("n", "<leader>j", vim.lsp.buf.hover, { desc = "Trigger lsp for hovering definition" })
 vim.keymap.set("n", "<leader>b", ':Telescope buffers<CR>', { desc = "Go to buffer list ong" })
 vim.keymap.set("n", "<leader>lg", ':Telescope live_grep<CR>', { desc = "Open telescope with live grep" })
@@ -32,3 +49,9 @@ end, {
         return { "list" }
     end
 })
+
+-- My extra vim commands
+vim.api.nvim_create_user_command('MarkedFiles', function()
+        listAllMarkedFiles()
+    end
+, {})
