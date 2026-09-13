@@ -37,19 +37,57 @@ hbac.setup({
 })
 
 -- Neovide setup
-if vim.g.neovide then
+local function setup_neovide()
+    -- Global variables configuration
+    -- Example: Block cursor in normal mode, vertical line in insert mode, with blinking enabled
+    vim.opt.guicursor = 
+        "n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50" ..
+        ",a:blinkwait700-blinkon400-blinkoff400"
+
     vim.g.neovide_fullscreen = true
-    vim.g.neovide_cursor_animation_length = 0
+    vim.g.neovide_cursor_animation_length = 0.28
     vim.g.neovide_cursor_smooth_blink = true
-    -- vim.g.neovide_opacity = 0.96
+    vim.g.neovide_opacity = 0.80
+    vim.g.neovide_window_blurred = true
+
+    -- Scale factor configurations & safe keymaps
+    if vim.g.neovide_scale_factor == nil then
+        vim.g.neovide_scale_factor = 1.0
+    end
+
+    local change_scale_factor = function(delta)
+        local current = vim.g.neovide_scale_factor or 1.0
+        local new_scale = current + delta
+        if new_scale < 0.1 then new_scale = 0.1 end
+        vim.g.neovide_scale_factor = new_scale
+    end
+
+    vim.keymap.set({ "n", "v" }, "<C-=>", function() change_scale_factor(0.1) end, { desc = "Increase Neovide Scale" })
+    vim.keymap.set({ "n", "v" }, "<C-->", function() change_scale_factor(-0.1) end, { desc = "Decrease Neovide Scale" })
+    vim.keymap.set({ "n", "v" }, "<C-0>", function() vim.g.neovide_scale_factor = 1.0 end, { desc = "Reset Neovide Scale" })
+
+    -- Cursor and syntax color adjustments
     vim.cmd([[highlight Cursor guibg=#faf200 guifg=black]])
     vim.cmd([[highlight lCursor guibg=#faf200 guifg=black]])
     vim.cmd("set guicursor=n-v-c:block-Cursor,i-ci-ve:ver25-Cursor")
-    vim.keymap.set({ "n", "v" }, "<C-+>", ":lua vim.g.neovide_scale_factor = vim.g.neovide_scale_factor + 0.1<CR>")
-    vim.keymap.set({ "n", "v" }, "<C-->", ":lua vim.g.neovide_scale_factor = vim.g.neovide_scale_factor - 0.1<CR>")
-    vim.keymap.set({ "n" , "v" }, "<C-0>", ":lua vim.g.neovide_scale_factor = 1<CR>")
-    -- Neovim backgrounds
+
+    -- Neovim backgrounds overrides
     vim.cmd([[highlight Normal guibg=#000000]])
     vim.cmd([[highlight StatusLine guibg=#0a0a12]])
     vim.cmd([[highlight TabLineFill guibg=#131324]])
 end
+
+-- 1. Catch normal startups where Neovide triggers standard initialization
+if vim.g.neovide then
+    setup_neovide()
+end
+
+-- 2. Catch headless startups when Neovide attaches *later* via server socket
+vim.api.nvim_create_autocmd("UIEnter", {
+    callback = function()
+        -- Only run if the newly attached UI client is actually Neovide
+        if vim.g.neovide then
+            setup_neovide()
+        end
+    end,
+})

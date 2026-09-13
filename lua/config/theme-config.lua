@@ -104,13 +104,14 @@ lualine.setup({
 
 vim.opt.termguicolors = true
 
+local uni_indicator = '#758D99'
 local uni_fg = '#ffffff'
 local uni_bg = '#282c40'
 bufferline.setup({
     options = {
         mode = "tabs",
-        numbers = "ordinal",
-        indicator = { icon = '> ' }
+        --numbers = "ordinal",
+        indicator = { icon = '█ ' }
     },
     highlights = {
         buffer_selected = {
@@ -132,7 +133,7 @@ bufferline.setup({
             bg = uni_bg,
         },
         indicator_selected = {
-            fg = uni_fg,
+            fg = uni_indicator,
             bg = uni_bg,
         },
         modified_selected = {
@@ -253,10 +254,10 @@ local sections = {
         title = "Basic Commands",
         margin = 5,
         content = {
-            { " Find File", "Telescope find_files", "<leader>ff" },
-            { "󰍉 Find Word", "Telescope live_grep", "<leader>lg" },
-            { " File Browser", "Telescope file_browser", "<leader>fb" },
-            { " Open 'work.vim'", "source work.vim", "<leader>gg" },
+            { "  Find File", "Telescope find_files", "<leader>ff" },
+            { "󰍉  Find Word", "Telescope live_grep", "<leader>lg" },
+            { "  File Browser", "Telescope file_browser", "<leader>fb" },
+            { "  Open 'work.vim'", "source work.vim", "<leader>gg" },
             -- { " Recent Files", "Telescope oldfiles", "<leader>of" },
             --{ " Colorschemes", "Telescope colorscheme", "<leader>cs" },
             --{ " New File", "lua require'startup'.new_file()", "<leader>nf" },
