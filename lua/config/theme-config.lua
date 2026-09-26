@@ -219,6 +219,16 @@ local death_note_art_2 = {
     "------------------",
 }
 
+local simple_art = {
+    "___    A",
+    "| |   {*}",
+    "| |  __V__",
+    "|_|o_|%%%|0_",
+    "   |       |",
+    "   |       |",
+    "   |_______|",
+}
+
 local sections = {
     art_contain = {
         type = "text",
@@ -227,7 +237,7 @@ local sections = {
         fold_section = false,
         title = "Header",
         margin = 5,
-        content = death_note_art_2,
+        content = simple_art,
         highlight = "Function",
         default_color = "",
         oldfiles_amount = 0
