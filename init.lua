@@ -96,3 +96,11 @@ local status_ok, cord = pcall(require, 'cord')
 if status_ok then
     cord.setup({})
 end
+
+-- Highlight on netrw
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "netrw",
+  callback = function()
+    vim.cmd("hi! link netrwMarkFile Search")
+  end,
+})

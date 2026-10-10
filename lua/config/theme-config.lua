@@ -19,7 +19,6 @@ local function getTime()
 end
 ]]
 
-
 -- Catppuccin setup
 catpu.setup({
     flavour = "mocha",
@@ -219,14 +218,19 @@ local death_note_art_2 = {
     "------------------",
 }
 
-local simple_art = {
-    "___    A",
-    "| |   {*}",
-    "| |  __V__",
-    "|_|o_|%%%|0_",
-    "   |       |",
-    "   |       |",
-    "   |_______|",
+local cute_art = {
+	"⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡀⠀⠀⠀⠀",
+	"⠀⠀⠀⠀⢀⡴⣆⠀⠀⠀⠀⠀⣠⡀ ᶻ 𝗓 𐰁 .ᐟ ⣼⣿⡗⠀⠀⠀⠀",
+	"⠀⠀⠀⣠⠟⠀⠘⠷⠶⠶⠶⠾⠉⢳⡄⠀⠀⠀⠀⠀⣧⣿⠀⠀⠀⠀⠀",
+	"⠀⠀⣰⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢻⣤⣤⣤⣤⣤⣿⢿⣄⠀⠀⠀⠀",
+	"⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣧⠀⠀⠀⠀⠀⠀⠙⣷⡴⠶⣦",
+	"⠀⠀⢱⡀⠀⠉⠉⠀⠀⠀⠀⠛⠃⠀⢠⡟⠀⠀⠀⢀⣀⣠⣤⠿⠞⠛⠋",
+	"⣠⠾⠋⠙⣶⣤⣤⣤⣤⣤⣀⣠⣤⣾⣿⠴⠶⠚⠋⠉⠁⠀⠀⠀⠀⠀⠀",
+	"⠛⠒⠛⠉⠉⠀⠀⠀⣴⠟⢃⡴⠛⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",
+	"⠀⠀⠀⠀⠀⠀⠀⠀⠛⠛⠋⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",
+	"",
+	"by rushhh :3",
+	"------------------",
 }
 
 local sections = {
@@ -237,7 +241,7 @@ local sections = {
         fold_section = false,
         title = "Header",
         margin = 5,
-        content = simple_art,
+        content = cute_art,
         highlight = "Function",
         default_color = "",
         oldfiles_amount = 0
