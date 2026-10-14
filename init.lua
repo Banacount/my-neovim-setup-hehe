@@ -9,6 +9,7 @@ require("config.html-stuff")
 require("config.my-basic-setup")
 require("config.lsp-config")
 require("config.theme-config")
+require("config.ai_implementation")
 
 -- Tab setting
 vim.opt.tabstop = 4

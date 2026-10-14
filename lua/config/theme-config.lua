@@ -109,7 +109,7 @@ local uni_bg = '#282c40'
 bufferline.setup({
     options = {
         mode = "tabs",
-        --numbers = "ordinal",
+        numbers = "ordinal",
         indicator = { icon = '█ ' }
     },
     highlights = {
