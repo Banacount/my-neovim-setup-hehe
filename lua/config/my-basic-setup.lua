@@ -54,3 +54,30 @@ vim.api.nvim_create_user_command('MarkedFiles', function()
         listAllMarkedFiles()
     end
 , {})
+
+-- Harpoon
+local harpoon = require("harpoon")
+
+-- REQUIRED
+harpoon:setup()
+-- REQUIRED
+
+vim.keymap.set("n", "<M-a>", function() harpoon:list():add() print("Added to harpoon list") end)
+vim.keymap.set("n", "<M-q>", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
+
+-- Quick Navigation
+vim.keymap.set("n", "<leader>1", function() harpoon:list():select(1) end)
+vim.keymap.set("n", "<leader>2", function() harpoon:list():select(2) end)
+vim.keymap.set("n", "<leader>3", function() harpoon:list():select(3) end)
+vim.keymap.set("n", "<leader>4", function() harpoon:list():select(4) end)
+
+-- Toggle previous & next buffers stored within Harpoon list
+vim.keymap.set("n", "<M-Left>", function() harpoon:list():prev() end)
+vim.keymap.set("n", "<M-Right>", function() harpoon:list():next() end)
+
+-- Tabs setup
+for i = 1, 9 do
+  vim.keymap.set("n", string.format("<M-%d>", i), function()
+    vim.cmd.normal(i.."gt")
+  end, { desc = string.format("Tab slot %d", i) })
+end

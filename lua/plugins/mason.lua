@@ -10,7 +10,7 @@ return {
         "mason-org/mason-lspconfig.nvim",
         opts = {
             automatic_enable = {
-                exclude = { 'jdtls' }
+                exclude = { 'jdtls', 'luau_lsp' },
             }
         },
         dependencies = {

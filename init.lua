@@ -5,7 +5,6 @@ vim.g.maplocalleader = [[ ]]
 require("config.lazy")
 require("lazy").setup("plugins")
 
-require("config.html-stuff")
 require("config.my-basic-setup")
 require("config.lsp-config")
 require("config.theme-config")
@@ -25,6 +24,7 @@ vim.opt.number = true
 vim.opt.relativenumber = true
 vim.cmd("set nowrap")
 vim.opt.guicursor = "i:block"
+vim.opt.scrolloff = 6
 
 -- Plugin setups
 local hbac = require("hbac")

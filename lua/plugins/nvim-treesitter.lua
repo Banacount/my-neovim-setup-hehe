@@ -7,6 +7,8 @@ local languages = {
 	"java",
 	"rust",
 	"markdown",
+	"lua",
+	"luau"
 }
 
 return {
