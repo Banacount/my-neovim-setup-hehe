@@ -75,7 +75,7 @@ lualine.setup({
         lualine_b = {'branch', 'diff', 'diagnostics'},
         lualine_c = {{'filename', path = 1}},
         --lualine_x = { getTime },
-        lualine_y = {'fileformat', 'filetype'},
+        lualine_y = {'fileformat'},
         lualine_z = {'location'}
     },
     --[[tabline = {
